@@ -1,2 +1,3 @@
-# dotNET_Angular_Social
-Dating app which uses .NET on server side and Angular on client side (Main project from Udemy course by Neil Cummings).
+# Dating App Prject
+Dating app which uses .NET on server side and Angular on client side. 
+This is from a project-based course on Udemy taught by Neil Cummings (https://www.udemy.com/course/build-an-app-with-aspnet-core-and-angular-from-scratch/).
