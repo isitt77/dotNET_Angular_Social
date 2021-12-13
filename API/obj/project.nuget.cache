@@ -1,13 +1,15 @@
 {
   "version": 2,
-  "dgSpecHash": "plcxnk9+duWA7ViXClSuO/nj1zCfSQmIlwR+ZnBvVNSlyi0hNlkfmigAOWlZ0mmnar9LAdgd7HJLo1cjw7N3hg==",
+  "dgSpecHash": "ZZS7NTmPRNeZsvtpyOpvQUQhFJBICKYj0dxPBjjyB0nUeTvZF/TqkvKul64BtjtCfUN44MKtHZX5ao2mAm0Qew==",
   "success": true,
   "projectFilePath": "/Users/isitts/Desktop/Udemy/Neil_Cummings_dotNet/Angular/Social/Section_2_Walking_Skeleton_1/part_6_Creating_API_Project/DatingApp/API/API.csproj",
   "expectedPackageFiles": [
+    "/Users/isitts/.nuget/packages/humanizer.core/2.8.26/humanizer.core.2.8.26.nupkg.sha512",
     "/Users/isitts/.nuget/packages/microsoft.data.sqlite.core/6.0.0/microsoft.data.sqlite.core.6.0.0.nupkg.sha512",
     "/Users/isitts/.nuget/packages/microsoft.entityframeworkcore/6.0.0/microsoft.entityframeworkcore.6.0.0.nupkg.sha512",
     "/Users/isitts/.nuget/packages/microsoft.entityframeworkcore.abstractions/6.0.0/microsoft.entityframeworkcore.abstractions.6.0.0.nupkg.sha512",
     "/Users/isitts/.nuget/packages/microsoft.entityframeworkcore.analyzers/6.0.0/microsoft.entityframeworkcore.analyzers.6.0.0.nupkg.sha512",
+    "/Users/isitts/.nuget/packages/microsoft.entityframeworkcore.design/6.0.0/microsoft.entityframeworkcore.design.6.0.0.nupkg.sha512",
     "/Users/isitts/.nuget/packages/microsoft.entityframeworkcore.relational/6.0.0/microsoft.entityframeworkcore.relational.6.0.0.nupkg.sha512",
     "/Users/isitts/.nuget/packages/microsoft.entityframeworkcore.sqlite/6.0.0/microsoft.entityframeworkcore.sqlite.6.0.0.nupkg.sha512",
     "/Users/isitts/.nuget/packages/microsoft.entityframeworkcore.sqlite.core/6.0.0/microsoft.entityframeworkcore.sqlite.core.6.0.0.nupkg.sha512",
