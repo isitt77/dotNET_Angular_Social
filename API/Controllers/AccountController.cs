@@ -25,9 +25,9 @@ namespace API.Controllers
             {
                 UserName = username,
                 PasswordHash = hmac.ComputeHash(Encoding.UTF8.GetBytes(password)),
-                PasswordSalt = hmac.Key;
-            }
-        _context.Users.Add(user);
+                PasswordSalt = hmac.Key
+            };
+            _context.Users.Add(user);
             await _context.SaveChangesAsync();
 
             return user;
