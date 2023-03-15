@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using API.Data;
 using API.DTOs;
 using API.Entities;
+using API.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
@@ -15,10 +16,17 @@ namespace API.Controllers
     public class AccountController : BaseApiController
     {
         private readonly DataContext _context;
-        public AccountController(DataContext context)
+
+        private readonly ITokenService _tokenService;
+
+        public AccountController(DataContext context,
+            ITokenService tokenService)
         {
             _context = context;
+            _tokenService = tokenService;
         }
+
+
         [HttpPost("register")]
         public async Task<ActionResult<AppUser>> Register(
             RegisterDto registerDto)
@@ -41,6 +49,7 @@ namespace API.Controllers
 
             return user;
         }
+
 
         [HttpPost("login")]
         public async Task<ActionResult<AppUser>> Login(LoginDto loginDto)
@@ -69,6 +78,7 @@ namespace API.Controllers
             // If conditions are met, return user...
             return user;
         }
+
 
         private async Task<bool> UserExists(string username)
         {
