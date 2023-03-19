@@ -3,6 +3,9 @@ using API.Interfaces;
 using API.Services;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.OpenApi.Models;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.IdentityModel.Tokens;
+using System.Text;
 
 namespace API
 {
@@ -26,6 +29,22 @@ namespace API
             services.AddControllers();
             services.AddScoped<ITokenService, TokenService>();
             services.AddCors();
+            // Jwt Middleware
+            services.AddAuthentication(JwtBearerDefaults
+                .AuthenticationScheme)
+                .AddJwtBearer(options =>
+                {
+                    options.TokenValidationParameters =
+                    new TokenValidationParameters
+                    {
+                        ValidateIssuerSigningKey = true,
+                        IssuerSigningKey = new SymmetricSecurityKey(
+                            Encoding.UTF8.GetBytes(
+                                _config["TokenKey"])),
+                        ValidateIssuer = false,
+                        ValidateAudience = false
+                    };
+                });
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo
@@ -56,6 +75,8 @@ namespace API
             app.UseCors(policy => policy.AllowAnyHeader()
             .AllowAnyMethod()
             .WithOrigins("https://localhost:4200"));
+
+            app.UseAuthentication();
 
             app.UseAuthorization();
 
