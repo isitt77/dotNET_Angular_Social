@@ -8,7 +8,7 @@ namespace API.Extensions
 {
     public static class ApplicationServiceExtensions
     {
-        public static IServiceCollection AddApplicationServices(
+        public static void AddApplicationServices(
             this IServiceCollection services, IConfiguration config
             )
         {
@@ -20,8 +20,6 @@ namespace API.Extensions
             services.AddControllers();
             services.AddScoped<ITokenService, TokenService>();
             services.AddCors();
-
-            return services;
         }
     }
 }
