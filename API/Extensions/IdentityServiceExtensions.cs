@@ -8,7 +8,7 @@ namespace API.Extensions
     public static class IdentityServiceExtensions
     {
         public static void AddIdentityServices(
-            IServiceCollection services, IConfiguration config)
+            this IServiceCollection services, IConfiguration config)
         {
             // Jwt Middleware
             services.AddAuthentication(JwtBearerDefaults
