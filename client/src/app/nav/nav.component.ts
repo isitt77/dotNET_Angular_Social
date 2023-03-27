@@ -7,9 +7,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavComponent implements OnInit {
 
+  title = 'The Dating App';
+
   constructor() { }
 
   ngOnInit(): void {
+
   }
 
 }
