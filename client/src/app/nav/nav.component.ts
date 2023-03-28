@@ -6,8 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./nav.component.css']
 })
 export class NavComponent implements OnInit {
-
   title = 'The Dating App';
+  model: any = {}
 
   constructor() { }
 
@@ -15,4 +15,9 @@ export class NavComponent implements OnInit {
 
   }
 
+  login() {
+    console.log(this.model)
+  }
+
 }
+
