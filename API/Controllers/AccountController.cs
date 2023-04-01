@@ -80,6 +80,7 @@ namespace API.Controllers
                 }
             }
             // If conditions are met, return user...
+            Console.WriteLine(user);
             return new UserDto
             {
                 Username = user.UserName,
