@@ -8,6 +8,7 @@ import { AccountService } from '../_services/account.service';
 })
 export class NavComponent implements OnInit {
   title = 'The Dating App';
+  isNavbarOpen: boolean = false;
   model: any = {};
   isLoggedIn: boolean = false;
 
@@ -15,6 +16,10 @@ export class NavComponent implements OnInit {
 
   ngOnInit(): void {
 
+  }
+
+  toggleNavbar() {
+    this.isNavbarOpen = !this.isNavbarOpen;
   }
 
   login() {
