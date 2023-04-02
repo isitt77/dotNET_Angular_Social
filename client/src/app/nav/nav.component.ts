@@ -9,6 +9,7 @@ import { AccountService } from '../_services/account.service';
 export class NavComponent implements OnInit {
   title = 'The Dating App';
   isNavbarOpen: boolean = false;
+  isLogoutDropdownOpen: boolean = false
   model: any = {};
   isLoggedIn: boolean = false;
 
@@ -20,6 +21,10 @@ export class NavComponent implements OnInit {
 
   toggleNavbar() {
     this.isNavbarOpen = !this.isNavbarOpen;
+  }
+
+  toggleDropdown() {
+    this.isLogoutDropdownOpen = !this.isLogoutDropdownOpen;
   }
 
   login() {
