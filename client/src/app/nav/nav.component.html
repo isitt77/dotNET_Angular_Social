@@ -35,7 +35,7 @@
                 </li>
             </ul>
             <div class="navbar-nav me-auto"></div>
-            <div class="nav-item dropdown d-flex" *ngIf="isLoggedIn">
+            <div class="nav-item dropdown me-3" *ngIf="isLoggedIn">
                 <a class="nav-link dropdown-toggle text-light" data-bs-toggle="dropdown" href="#" role="button"
                     aria-haspopup="true" aria-expanded="false" (click)="toggleDropdown()">Welcome</a>
                 <div class="dropdown-menu" [ngClass]="{'show': isLogoutDropdownOpen}">
