@@ -1,15 +1,20 @@
 import { Component, OnInit } from '@angular/core';
 import { AccountService } from '../_services/account.service';
+import { BsDropdownConfig } from 'ngx-bootstrap/dropdown';
 
 @Component({
   selector: 'app-nav',
   templateUrl: './nav.component.html',
-  styleUrls: ['./nav.component.css']
+  styleUrls: ['./nav.component.css'],
+  providers: [{
+    provide: BsDropdownConfig, useValue:
+      { isAnimated: true, autoClose: true }
+  }]
 })
 export class NavComponent implements OnInit {
   title = 'The Dating App';
   isNavbarOpen: boolean = false;
-  isLogoutDropdownOpen: boolean = false
+  // isLogoutDropdownOpen: boolean = false
   model: any = {};
   isLoggedIn: boolean = false;
 
@@ -23,9 +28,9 @@ export class NavComponent implements OnInit {
     this.isNavbarOpen = !this.isNavbarOpen;
   }
 
-  toggleDropdown() {
-    this.isLogoutDropdownOpen = !this.isLogoutDropdownOpen;
-  }
+  // toggleDropdown() {
+  //   this.isLogoutDropdownOpen = !this.isLogoutDropdownOpen;
+  // }
 
   login() {
     console.log(this.model)
