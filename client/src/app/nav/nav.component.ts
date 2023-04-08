@@ -21,7 +21,7 @@ export class NavComponent implements OnInit {
   constructor(private accountService: AccountService) { }
 
   ngOnInit(): void {
-
+    this.getCurrentUser();
   }
 
   toggleNavbar() {
@@ -31,6 +31,14 @@ export class NavComponent implements OnInit {
   // toggleDropdown() {
   //   this.isLogoutDropdownOpen = !this.isLogoutDropdownOpen;
   // }
+
+  getCurrentUser() {
+    this.accountService.currentUser$.subscribe({
+      // checks if currentUser$ (observable) is logged in...
+      next: user => this.isLoggedIn = !!user, // <-- !! converts non-bool into bool.
+      error: e => console.log(e)
+    })
+  }
 
   login() {
     console.log(this.model)
@@ -44,6 +52,7 @@ export class NavComponent implements OnInit {
   }
 
   logout() {
+    this.accountService.logout();
     this.isLoggedIn = false;
   }
 
