@@ -7,7 +7,7 @@
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarColor01" [ngClass]="{ 'show': isNavbarOpen }">
-            <ul class="navbar-nav me-auto" *ngIf="isLoggedIn">
+            <ul class="navbar-nav me-auto" *ngIf="currentUser$ | async">
                 <li class="nav-item">
                     <a class="nav-link" href="#">Home
                         <span class="visually-hidden">(current)</span>
@@ -36,7 +36,7 @@
             </ul>
             <div class="navbar-nav me-auto"></div>
             <!-- If logged in -->
-            <div class="nav-item dropdown btn-group me-3" *ngIf="isLoggedIn" dropdown>
+            <div class="nav-item dropdown btn-group me-3" *ngIf="currentUser$ | async" dropdown>
                 <a id="button-animated" dropdownToggle class="nav-link dropdown-toggle text-light"
                     data-bs-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"
                     aria-controls="dropdown-animated">
@@ -48,7 +48,8 @@
                 </div>
             </div>
             <!-- If not logged in -->
-            <form #loginForm="ngForm" class="d-flex" (ngSubmit)="login()" autocomplete="off" *ngIf="!isLoggedIn">
+            <form #loginForm="ngForm" class="d-flex" (ngSubmit)="login()" autocomplete="off"
+                *ngIf="!(currentUser$ | async)">
                 <input name="username" [(ngModel)]="model.username" class="form-control me-sm-2" type="text"
                     placeholder="Username">
                 <input name="password" [(ngModel)]="model.password" class="form-control me-sm-2" type="password"
