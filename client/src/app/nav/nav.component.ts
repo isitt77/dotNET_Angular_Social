@@ -19,12 +19,12 @@ export class NavComponent implements OnInit {
   // isLogoutDropdownOpen: boolean = false
   model: any = {};
   // isLoggedIn: boolean = false;
-  currentUser$: Observable<User | null> = of(null);
+  // currentUser$: Observable<User | null> = of(null);
 
-  constructor(private accountService: AccountService) { }
+  constructor(public accountService: AccountService) { }
 
   ngOnInit(): void {
-    this.currentUser$ = this.accountService.currentUser$;
+    // this.currentUser$ = this.accountService.currentUser$;
   }
 
   toggleNavbar() {
