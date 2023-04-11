@@ -1,1 +1,19 @@
-<p>home works!</p>
+<div class="container mt-5">
+    <div *ngIf="!isRegisterMode">
+        <h1>Find your match!</h1>
+        <p class="lead">Sign up!</p>
+        <div class="btn-group">
+            <button class="btn btn-primary" (click)="registerToggle()">Register</button>
+            <button class="btn btn-info">Learn more...</button>
+        </div>
+    </div>
+
+    <div class="container" *ngIf="isRegisterMode">
+        <div class="row">
+            <div class="col">
+                <p>Register form goes here...</p>
+                <button class="btn btn-secondary" (click)="registerToggle()">Cancel</button>
+            </div>
+        </div>
+    </div>
+</div>
