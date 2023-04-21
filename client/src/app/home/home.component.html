@@ -11,8 +11,9 @@
     <div class="container" *ngIf="isRegisterMode">
         <div class="row">
             <div class="col">
-                <p>Register form goes here...</p>
-                <button class="btn btn-secondary" (click)="registerToggle()">Cancel</button>
+                <app-register></app-register>
+                <br>
+                <a class="btn btn-outline-secondary" (click)="registerToggle()">Back to Home Page</a>
             </div>
         </div>
     </div>
